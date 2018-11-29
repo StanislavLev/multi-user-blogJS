@@ -8,6 +8,7 @@ export const store = new Vuex.Store({
     username: '',
     alertMsg: '',
     postsAndAvatar: [],
-    avatarURL: ''
+    avatarURL: '',
+    userPosts: []
   }
 });

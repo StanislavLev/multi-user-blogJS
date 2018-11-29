@@ -236,6 +236,24 @@ app.post('/profile',  (req, res) => {
     res.send({message: "Please, log in first!"});
   }
 });
+
+app.get('/profile/myposts',  (req, res) => {
+  console.log("inside profile/myposts");
+  if(req.isAuthenticated()){
+    Post
+    .find({
+      author: req.user.username
+    })
+    .then((posts) => {
+      console.log(posts[0]);
+      res.send(posts);
+    });
+  } 
+  else {
+    res.send({message: "Please, log in first!"});
+  }
+});
+
 app.post('/profile/newpost',  (req, res) => {
   const post_title = req.body.post_title;
   const post_text = req.body.post_text;
