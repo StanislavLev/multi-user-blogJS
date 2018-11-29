@@ -69,8 +69,14 @@ i{
   align-items: center;
   background-color: rgb(205, 133, 63);
   color: rgb(40,23,0);
-  padding: 3px;
+  padding: 5px 10px;
   font-size: 1.2rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 4px 4px 20px 0px #888;
 }
 
 .s-nav-group {
@@ -80,7 +86,7 @@ i{
 .s-nav-group > *{
   display: flex;
 	align-items: center;
-  height: 64px;
+  height: 60px;
   padding: 0 10px;
 }
 

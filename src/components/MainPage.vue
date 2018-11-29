@@ -5,7 +5,7 @@
       {{alertMsg}}
     </div>
     <h2 class="text-center">Welcome to Home Page, {{username}}</h2>
-    <div class="grid-container">
+    <div class="posts-container">
       <div v-for="(item, index) in postsAndAvatar">
         <post-card :index="index"></post-card>
       </div>
@@ -52,10 +52,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: space-between;
+.posts-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.posts-container > * {
+  margin: 5px;
 }
 
 

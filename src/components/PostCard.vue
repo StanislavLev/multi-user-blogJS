@@ -3,7 +3,7 @@
     <img class="card-img-top" :src="placeHolderImg" alt="Card image cap"/>
     <div class="card-body">
       <h3 class="card-title overflow-ellipsis text-center">{{postsAndAvatar.post.title}}</h3>
-      <p class="card-text">{{postsAndAvatar.post.post.substr(0, 200)}}</p>
+      <p class="card-text">{{postsAndAvatar.post.post.substr(0, 200)}}...</p>
     </div>
     <div class="card-footer row">
       <div class="col-4 text-center" >
@@ -68,6 +68,7 @@ export default {
 
 .card {
   width: 300px;
+  box-shadow: 3px 3px 20px 0 #888;
 }
 
 .row {
@@ -78,6 +79,12 @@ export default {
 [class^="col-"] {
   padding: 5px;
 }
+
+.card-text {
+  line-height: 1.2em;
+  height: 8.4em;
+}
+
 .img-avatar {
   width: 48px;
   height: 48px;
