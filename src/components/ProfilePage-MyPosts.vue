@@ -2,7 +2,7 @@
   <div>
     <h2 class="text-center">Welcome to My Posts Page, {{username}}</h2>
     <div v-for="item in userPosts">
-      <h4>{{item.title}}</h4> 
+      <router-link :to="'/profile/post/' + item._id"><h4>{{item.title}}</h4></router-link> 
     </div>
   </div>
 </template>

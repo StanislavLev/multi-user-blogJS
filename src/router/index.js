@@ -7,6 +7,7 @@ import ProfilePage       from '@/components/ProfilePage';
 import NewPost           from '@/components/ProfilePage-NewPost';
 import ProfileUpdate     from '@/components/ProfilePage-Update';
 import ProfileMyPosts    from '@/components/ProfilePage-MyPosts';
+import ProfileSinglePost from '@/components/ProfilePage-SinglePost';
 
 Vue.use(Router)
 
@@ -46,7 +47,14 @@ export default new Router({
               path: 'myposts',
               name: 'ProfileMyPosts',
               component: ProfileMyPosts
+            },
+            {
+              path: 'post/:id',
+              name: 'ProfileSinglePost',
+              component: ProfileSinglePost
             }
+            
+            
       ]
     }
   ]
