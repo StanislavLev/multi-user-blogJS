@@ -5,7 +5,7 @@
     <article>
       {{post.post}} 
     </article>
-    <button type="button" class="btn btn-primary">Edit post</button>
+    <button type="button" class="btn btn-primary" @click="editPost">Edit post</button>
     <button type="button" class="btn btn-danger" @click="deletePost">Delete post</button>
   </div>
 </template>
@@ -32,6 +32,9 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+    },
+    editPost(){
+      this.$router.push('/profile/editpost/' + this.post._id);
     }
   }
 }

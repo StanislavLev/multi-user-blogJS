@@ -272,6 +272,26 @@ app.delete('/profile/post/:id',  async (req, res) => {
   }
 });
 
+app.put('/profile/post/:id',  async (req, res) => {
+  console.log("inside edit profile/post/" + req.params.id);
+  if(req.isAuthenticated()){
+    try{
+      console.log("inside if");
+      await Post.updateOne({_id: req.params.id}, {
+        title: req.body.post_title, 
+        post: req.body.post_text 
+      });
+      res.send({message: "Post was updated successfully!"});
+    }
+    catch(err) {
+      console.log(err);
+    }
+  } 
+  else {
+    res.send({message: "Please, log in first!"});
+  }
+});
+
 app.post('/profile/newpost',  (req, res) => {
   const post_title = req.body.post_title;
   const post_text = req.body.post_text;

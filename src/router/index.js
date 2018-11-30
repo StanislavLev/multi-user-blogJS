@@ -5,6 +5,7 @@ import RegisterPage      from '@/components/RegisterPage';
 import LoginPage         from '@/components/LoginPage';
 import ProfilePage       from '@/components/ProfilePage';
 import NewPost           from '@/components/ProfilePage-NewPost';
+import EditPost          from '@/components/ProfilePage-EditPost';
 import ProfileUpdate     from '@/components/ProfilePage-Update';
 import ProfileMyPosts    from '@/components/ProfilePage-MyPosts';
 import ProfileSinglePost from '@/components/ProfilePage-SinglePost';
@@ -37,6 +38,11 @@ export default new Router({
               path: 'newpost',
               name: 'NewPost',
               component: NewPost
+            },
+            {
+              path: 'editpost/:id',
+              name: 'EditPost',
+              component: EditPost
             },
             {
               path: 'update',

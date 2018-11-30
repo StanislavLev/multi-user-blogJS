@@ -10,5 +10,12 @@ export const store = new Vuex.Store({
     postsAndAvatar: [],
     avatarURL: '',
     userPosts: []
+  },
+  mutations: {
+    editPost (state, post) {
+      let curPost = state.userPosts.find(obj => { return obj._id == post._id });
+      curPost.title = post.title;
+      curPost.post = post.post;
+    }
   }
 });
