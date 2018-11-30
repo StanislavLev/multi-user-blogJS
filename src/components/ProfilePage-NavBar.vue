@@ -49,7 +49,7 @@ a:hover {
   cursor: pointer;
 }
 
-.s-nav-item:hover {
+.s-nav-item:hover, .router-link-active {
   background-color: rgb(80, 46, 0);
 }
 

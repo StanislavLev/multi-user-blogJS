@@ -2,14 +2,14 @@
   <div>
     <nav class="s-navbar">
       <div class="s-nav-group">
-        <router-link class="s-nav-item" to="/">Home <i class="fas fa-home"></i></router-link>
+        <router-link class="s-nav-item" to="/" exact>Home <i class="fas fa-home"></i></router-link>
       </div>
       <div class="s-nav-group">  
-        <router-link class="s-nav-item" v-if="!username" to="/register">Join <i class="fas fa-user-plus"></i></router-link>
-        <router-link class="s-nav-item" v-if="!username" to="/login">Sign In <i class="fas fa-sign-in-alt"></i></router-link>
+        <router-link class="s-nav-item" v-if="!username" to="/register" exact>Join <i class="fas fa-user-plus"></i></router-link>
+        <router-link class="s-nav-item" v-if="!username" to="/login" exact>Sign In <i class="fas fa-sign-in-alt"></i></router-link>
         <router-link class="s-nav-item" v-if="username" to="/profile">Profile <i class="far fa-user-circle"></i></router-link>
         <a  class="s-nav-item" v-if="username" @click.prevent="logout">Sign Out <i class="fas fa-sign-out-alt"></i></a>
-        <span id="nav-username" class="text-center" v-if="username">{{username}}</span>
+        <span id="nav-username" class="text-center" v-if="username"><i>{{username}}</i></span>
         <img id="img-avatar"  v-if="username" :src="this.avatarURL" alt="avatar image" />
       </div>
     </nav>
@@ -95,7 +95,7 @@ i{
   cursor: pointer;
 }
 
-.s-nav-item:hover {
+.s-nav-item:hover, .router-link-active {
   background-color: rgb(190, 125, 55);
 }
 

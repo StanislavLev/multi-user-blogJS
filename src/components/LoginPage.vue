@@ -40,7 +40,7 @@ export default {
         this.$store.state.alertMsg = response.data.message;
         setTimeout(()=> {this.$store.state.alertMsg = '';}, 2000);
         this.$store.state.username = response.data.username;
-        this.$router.push('/profile');
+        this.$router.push('/profile/myposts');
       })  
       .catch((error) => {this.msg = "Error: " + error})
     }
