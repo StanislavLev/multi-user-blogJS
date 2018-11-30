@@ -254,6 +254,24 @@ app.get('/profile/myposts',  (req, res) => {
   }
 });
 
+app.delete('/profile/post/:id',  async (req, res) => {
+  console.log("inside delete profile/post/" + req.params.id);
+  if(req.isAuthenticated()){
+    try{
+      console.log("inside if");
+      let post = await Post.findOne({_id: req.params.id});
+      await post.remove();
+      res.send({message: "Post was deteted successfully!"});
+    }
+    catch(err) {
+      console.log(err);
+    }
+  } 
+  else {
+    res.send({message: "Please, log in first!"});
+  }
+});
+
 app.post('/profile/newpost',  (req, res) => {
   const post_title = req.body.post_title;
   const post_text = req.body.post_text;

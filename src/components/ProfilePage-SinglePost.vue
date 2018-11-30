@@ -5,10 +5,14 @@
     <article>
       {{post.post}} 
     </article>
+    <button type="button" class="btn btn-primary">Edit post</button>
+    <button type="button" class="btn btn-danger" @click="deletePost">Delete post</button>
   </div>
 </template>
 
 <script>
+
+import axios  from 'axios';
 
 export default {
 
@@ -16,6 +20,18 @@ export default {
   data() {
     return{
       post: this.$store.state.userPosts.find(obj => { return obj._id == this.$route.params.id })
+    }
+  },
+  methods: {
+    deletePost(){
+      console.log(this.post._id);
+      axios.delete('profile/post/' + this.post._id)
+      .then(() => {
+        this.$router.push('/profile/myposts');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     }
   }
 }
