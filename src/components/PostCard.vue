@@ -71,6 +71,10 @@ export default {
   box-shadow: 3px 3px 20px 0 #888;
 }
 
+.card:hover {
+  box-shadow: 5px 5px 20px 0 #888;
+}
+
 .row {
   margin: 0;
   padding: 0;

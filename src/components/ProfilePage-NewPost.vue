@@ -35,7 +35,7 @@ export default {
       axios.post('/profile/newpost', {post_title: this.post_title, post_text: this.post_text})
       .then((response) => {
         
-        this.$router.push('/profile');
+        this.$router.push('/profile/myposts');
       })  
       .catch((error) => {this.msg = "Error: " + error})
     }

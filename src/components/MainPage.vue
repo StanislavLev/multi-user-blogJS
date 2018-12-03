@@ -52,6 +52,18 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.posts-container a {
+  color: black;
+}
+
+.posts-container a:hover {
+  color: black;
+  text-decoration: none;
+  position: relative;
+  top: -2px;
+  left: -2px;
+}
+
 .posts-container {
   display: flex;
   justify-content: space-around;
