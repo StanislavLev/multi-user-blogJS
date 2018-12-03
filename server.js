@@ -1,4 +1,5 @@
 const express = require('express');
+const router = express.Router();
 const bodyParser= require('body-parser');
 const User = require('./models/user');
 const Post = require('./models/post');
@@ -13,6 +14,7 @@ const multer = require('multer');
 const sharp = require('sharp');
 const fs = require('fs');
 const aws = require('aws-sdk');
+const routePost = require('./routes/post');
 
 aws.config.update({
   accessKeyId: process.env.AWS_KEY_ID,
@@ -67,7 +69,7 @@ app.use(bodyParser.json());
 // serve files from dist directory
 app.use(express.static(__dirname + '/dist'));
 
-
+app.use('/post', routePost);
 
 // multer config section
 const MAX_IMG_SIZE = 300000;
@@ -205,6 +207,7 @@ app.use(function(err, req, res, next) {
   }
 });
 ////////////////
+
 
 app.post('/login',  passport.authenticate('local'), (req, res) => {
     // If this function gets called, authentication was successful.

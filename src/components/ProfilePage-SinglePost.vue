@@ -17,9 +17,9 @@ import axios  from 'axios';
 export default {
 
   name: 'ProfilePage-SinglePost',
-  data() {
-    return{
-      post: this.$store.state.userPosts.find(obj => { return obj._id == this.$route.params.id })
+  computed: {
+    post() {
+      return this.$store.state.userPosts.find(obj => { return obj._id == this.$route.params.id });
     }
   },
   methods: {

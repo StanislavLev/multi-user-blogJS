@@ -14,13 +14,10 @@
 <script>
 
 import axios  from 'axios';
-import NavBar from '@/components/NavBar.vue';
 
 export default {
   name: 'NewPost',
-  components: {
-    'nav-bar': NavBar
-  },
+
   data () {
     return {
       msg: '',

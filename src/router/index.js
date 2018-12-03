@@ -9,6 +9,7 @@ import EditPost          from '@/components/ProfilePage-EditPost';
 import ProfileUpdate     from '@/components/ProfilePage-Update';
 import ProfileMyPosts    from '@/components/ProfilePage-MyPosts';
 import ProfileSinglePost from '@/components/ProfilePage-SinglePost';
+import Post              from '@/components/Post';
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/login',
       name: 'LoginPage',
       component: LoginPage
+    },
+    {
+      path: '/post/:id',
+      name: 'Post',
+      component: Post
     },
     {
       path: '/profile',

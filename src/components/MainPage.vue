@@ -7,7 +7,7 @@
     <h2 class="text-center">Welcome to Home Page, {{username}}</h2>
     <div class="posts-container">
       <div v-for="(item, index) in postsAndAvatar">
-        <post-card :index="index"></post-card>
+        <router-link :to="`/post/${item.post._id}`"><post-card :index="index"></post-card></router-link>
       </div>
     </div>  
       
